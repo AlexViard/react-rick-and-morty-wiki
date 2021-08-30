@@ -1,13 +1,15 @@
 .header {
     height: 80vh;
-    background: rgb(44,89,115);
-    background: linear-gradient(138deg, rgba(44,89,115,1) 0%, rgba(22,29,40,1) 62%);  
+    
+    background: rgb(44,89,115);  
+    // background: linear-gradient(138deg, rgba(44,89,115,1) 0%, rgba(22,29,40,1) 62%);
+    
+    background-image: linear-gradient(to bottom, #2c5973, #294960, #24394d, #1e2b3a, #161d28);
 
     &-img {
         width: 500px;
         margin: auto;
         
-
         img {
             width: 100%;
         }
