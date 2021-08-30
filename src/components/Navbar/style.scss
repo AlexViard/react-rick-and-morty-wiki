@@ -1,0 +1,26 @@
+@use 'src/styles/vars';
+
+.navbar {
+    // border: 1px solid red;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+
+    &-list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &-link {
+            
+        }
+
+        .img {
+            width: 350px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
