@@ -55,6 +55,7 @@
                 font-weight: bold;
                 font-size: 20px;
                 margin-right: 1em;
+                transition: 0.4s;
 
                 &:hover {
                     background-color: vars.$color-green;

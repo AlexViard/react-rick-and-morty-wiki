@@ -2,7 +2,6 @@
 
 .home {
     overflow: hidden;
-    
     position: relative;
     background: rgb(21,29,40);
     background-image: linear-gradient(to bottom, #161d28, #151a23, #13171e, #111419, #0e1014);
@@ -12,7 +11,7 @@
         position: absolute;
         width: 400vw;
         height: 600vh;
-        z-index: 1;
+        z-index: auto;
         margin-top: -200vh;
         margin-left: -200vw;
         background-size: 240px;
@@ -31,7 +30,6 @@
       }
 
       &-section {
-          z-index: 2;
           color: #fff;
           display: flex;
           align-items: center;
@@ -49,6 +47,7 @@
         }
 
         &-text {
+          
             margin: 0em 4em;
 
             &-title {
@@ -64,12 +63,19 @@
             }
 
             &-btn {
+                position: relative;
                 display: inline-block;
                 background-color: vars.$color-green;
                 padding: 1em 1.5em;
                 border-radius: 60px;
                 font-weight: bold;
                 font-size: 20px;
+                transition: 0.2s;
+              
+                &:hover {
+                  transform: scale(1.05);
+                  transition: 0.2s;
+                }
             }
         }
 
