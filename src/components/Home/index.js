@@ -4,6 +4,8 @@ import episode from 'images/background-episode.jpeg';
 import anatomyPark from 'images/anatomy-park.png';
 import { Link } from 'react-router-dom';
 
+import Dimension from 'components/Dimension';
+
 import './style.scss';
 
 const Home = () => (
@@ -44,6 +46,7 @@ const Home = () => (
         </div>
         
       </div>
+      <Dimension />
   </div>
 );
 
