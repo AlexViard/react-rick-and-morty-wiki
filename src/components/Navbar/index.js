@@ -8,7 +8,7 @@ import './style.scss';
 const NavBar = () => (
   <nav className="navbar">
       <ul className="navbar-list">
-          <li className="navbar-list-link"><Link to="/">Personnages</Link></li>
+          <li className="navbar-list-link"><Link to="/characters">Personnages</Link></li>
           <li className="navbar-list-link"><Link to="/">Forum</Link></li>
           <li className="navbar-list-link img">
             <img src={logo} alt="" />
