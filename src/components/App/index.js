@@ -4,7 +4,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import Header from 'components/Header';
-import Home from 'components/Home';
+import Home from 'components/Header/Home';
 import Characters from 'components/Characters';
 import './style.scss';
 

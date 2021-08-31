@@ -1,0 +1,81 @@
+@use 'src/styles/vars';
+
+.card {
+    width: 700px;
+    margin-left: 2em;
+    // border: 1px solid red;
+    border-radius: 20px;
+    display: flex;
+    background: #3C3E44;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+    &-img {
+        width: 40%; 
+        background-position: center;
+        background-size: contain; 
+    }
+
+    &-info {
+        padding: 1em;
+        color: #fff;
+        font-size: vars.$subtitle-size;
+        font-weight: 300;
+
+        &-name {
+            font-size: vars.$title-size;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+
+        &-status {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.3em;
+            span {
+                display: inline-block;
+                width: 0.5em;
+                height: 0.5em;
+                border-radius: 50%;
+                
+                margin-right: 0.3em;
+            }
+        }
+
+        &-species {
+            margin-bottom: 0.3em;
+        }
+
+        &-type {
+            margin-bottom: 0.3em;
+        }
+
+        &-gender {
+            margin-bottom: 0.3em;
+        }
+
+        &-origin {
+            margin-bottom: 0.3em;
+        }
+
+        &-subtitle {
+            color: grey;
+            font-size: vars.$text-size;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.2em;
+        }
+
+        &-location {
+            margin-bottom: 0.3em;
+        }
+    }
+
+    .alive {
+        background-color: rgb(46, 214, 46);
+    }
+
+    .dead {
+        background-color: rgb(214, 61, 46);
+    }
+}
