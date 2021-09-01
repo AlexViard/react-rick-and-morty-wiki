@@ -7,10 +7,21 @@ import './style.scss';
 
 const Characters = () => {
     const [characters, setCharacters] = useState([]);
+
     const fetchCharacters = async () => {
-        const response = await api.get('/character');
-        // console.log(response.data.results);
-        setCharacters(response.data.results);        
+        try {
+            const { data } = await api.get('/character');
+            const nbrPage = data.info.pages;
+            let tab = [];
+
+            for (let i = 0; nbrPage > i; i++) {
+                const response = await api.get(`/character/?page=${i}`);
+                tab = tab.concat(response.data.results);
+                setCharacters(tab);
+            }; 
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     useEffect(() => {
@@ -21,10 +32,12 @@ const Characters = () => {
         <div className="characters">
             <NavBar />
             {/* <SearchBar /> */}
-
+            <div className="characters-list">
             {characters.map((elem) => (
                 <Card {...elem} />
-            ))}          
+            ))} 
+            </div>
+                     
 
             
         </div>
