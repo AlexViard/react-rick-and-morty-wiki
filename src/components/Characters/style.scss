@@ -1,4 +1,12 @@
 .characters {
-    height: 100vh;
     background-image: linear-gradient(to right bottom, #2c5973, #294960, #24394d, #1e2b3a, #161d28);
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+        margin: auto;
+        min-height: 100vh;
+    }
 }

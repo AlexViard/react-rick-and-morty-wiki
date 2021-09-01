@@ -1,8 +1,8 @@
 @use 'src/styles/vars';
 
 .card {
-    width: 700px;
-    margin-left: 2em;
+    width: 550px;
+    margin: 0.5em;
     // border: 1px solid red;
     border-radius: 20px;
     display: flex;
@@ -11,9 +11,10 @@
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
     &-img {
-        width: 40%; 
+        min-width: 40%; 
         background-position: center;
-        background-size: contain; 
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &-info {
