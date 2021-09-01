@@ -9,21 +9,24 @@ const Card = ({ name, status, species, type, gender, origin, location, image, ep
     const [firstEpisode, setFirstEpisode] = useState({
         name: '',
     });
-    const getNameFirstEpisode = async (episode) => {
-        try {
-            const response = await api.get(episode);
-            console.log(response);
-            setFirstEpisode({
-                name: response.data.name,
-            });
-        } catch (err) {
-            console.log(err);
-        }
-    };
 
     useEffect(() => {
+        const getNameFirstEpisode = async (episode) => {
+            try {
+                const response = await api.get(episode);
+                console.log(response);
+                setFirstEpisode({
+                    name: response.data.name,
+                });
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
         getNameFirstEpisode(episode[0]);
+        // eslint-disable-next-line
     }, []);
+
 
     return (
         <div className="card">

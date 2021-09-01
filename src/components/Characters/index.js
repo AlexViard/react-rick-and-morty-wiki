@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from 'api';
 import NavBar from 'components/NavBar';
 import Card from 'components/Card';
-// import SearchBar from 'components/SearchBar';
+import SearchBar from 'components/SearchBar';
 import './style.scss';
 
 const Characters = () => {
@@ -31,7 +31,7 @@ const Characters = () => {
     return (
         <div className="characters">
             <NavBar />
-            {/* <SearchBar /> */}
+            <SearchBar type={'personnage'} />
             <div className="characters-list">
             {characters.map((elem) => (
                 <Card {...elem} />
