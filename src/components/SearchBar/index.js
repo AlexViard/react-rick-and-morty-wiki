@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
     VscSearch
@@ -6,12 +6,15 @@ import {
 
 import './style.scss';
 
-const SearchBar = ({ type }) => (
-  <div className="searchbar">
-    <input type="text" placeholder={`Rechercher un ${type}...`} />
-    <VscSearch className="searchbar-icon" />
-  </div>
-);
+const SearchBar = ({ type, inputValue, handleChange }) => {
+    
+    return (
+        <div className="searchbar">
+            <input type="text" placeholder={`Rechercher un ${type}...`} value={inputValue} onChange={handleChange} />
+            <VscSearch className="searchbar-icon" />
+        </div>
+    );
+};
 
 SearchBar.propTypes = {
     type: PropTypes.string.isRequired,

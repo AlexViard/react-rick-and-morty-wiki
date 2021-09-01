@@ -7,6 +7,7 @@ import './style.scss';
 
 const Characters = () => {
     const [characters, setCharacters] = useState([]);
+    const [inputValue, setInputValue] = useState('');
 
     const fetchCharacters = async () => {
         try {
@@ -14,7 +15,7 @@ const Characters = () => {
             const nbrPage = data.info.pages;
             let tab = [];
 
-            for (let i = 0; nbrPage > i; i++) {
+            for (let i = 1; nbrPage > i; i++) {
                 const response = await api.get(`/character/?page=${i}`);
                 tab = tab.concat(response.data.results);
                 setCharacters(tab);
@@ -24,6 +25,16 @@ const Characters = () => {
         }
     };
 
+    const handleChangeInputValue = (e) => {
+        setInputValue(e.target.value);
+    };
+
+    const getFilterCharacters = () => (
+        characters.filter((elem) => (
+            elem.name.toLowerCase().includes(inputValue.toLowerCase())
+        ))
+    );
+
     useEffect(() => {
         fetchCharacters();
     }, []);
@@ -31,15 +42,12 @@ const Characters = () => {
     return (
         <div className="characters">
             <NavBar />
-            <SearchBar type={'personnage'} />
+            <SearchBar type={'personnage'} inputValue={inputValue} handleChange={handleChangeInputValue} />
             <div className="characters-list">
-            {characters.map((elem) => (
+            {getFilterCharacters().map((elem) => (
                 <Card {...elem} />
             ))} 
             </div>
-                     
-
-            
         </div>
     )
 }
