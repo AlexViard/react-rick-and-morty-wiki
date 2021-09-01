@@ -26,11 +26,23 @@ const Card = ({name, species, type, gender, origin, image, episode}) => (
 );
 
 Card.propTypes = {
-
+    name: PropTypes.string,
+    species: PropTypes.string,
+    type: PropTypes.string,
+    gender: PropTypes.string,
+    origin: PropTypes.string,
+    image: PropTypes.string,
+    episode: PropTypes.array,
 };
 
 Card.defaultProps = {
-
+    name: '',
+    species: '',
+    type: '',
+    gender: '',
+    origin: '',
+    image: '',
+    episode: [],
 };
 
 export default Card;
