@@ -13,7 +13,8 @@
     &-img {
         width: 40%; 
         background-position: center;
-        background-size: contain; 
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &-info {

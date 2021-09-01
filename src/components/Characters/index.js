@@ -9,8 +9,8 @@ const Characters = () => {
     const [characters, setCharacters] = useState([]);
     const fetchCharacters = async () => {
         const response = await api.get('/character');
-        console.log(response.data);
-        setCharacters(response.data);        
+        // console.log(response.data.results);
+        setCharacters(response.data.results);        
     };
 
     useEffect(() => {
@@ -21,7 +21,12 @@ const Characters = () => {
         <div className="characters">
             <NavBar />
             {/* <SearchBar /> */}
-            <Card />
+
+            {characters.map((elem) => (
+                <Card {...elem} />
+            ))}          
+
+            
         </div>
     )
 }
