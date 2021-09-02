@@ -3,14 +3,17 @@ import api from 'api';
 import NavBar from 'components/NavBar';
 import Card from 'components/Card';
 import SearchBar from 'components/SearchBar';
+import Loader from 'components/Loader';
 import './style.scss';
 
 const Characters = () => {
     const [characters, setCharacters] = useState([]);
     const [inputValue, setInputValue] = useState('');
+    const [loader, setLoader] = useState(false);
 
     const fetchCharacters = async () => {
         try {
+            setLoader(true);
             const { data } = await api.get('/character');
             const nbrPage = data.info.pages;
             let tab = [];
@@ -22,6 +25,8 @@ const Characters = () => {
             }; 
         } catch (err) {
             console.log(err);
+        } finally {
+            setLoader(false);
         }
     };
 
@@ -40,15 +45,23 @@ const Characters = () => {
     }, []);
 
     return (
-        <div className="characters">
-            <NavBar />
-            <SearchBar type={'personnage'} inputValue={inputValue} handleChange={handleChangeInputValue} />
-            <div className="characters-list">
-            {getFilterCharacters().map((elem) => (
-                <Card {...elem} />
-            ))} 
+        <>
+            <div className="characters">
+            {loader && (<Loader />)}
+            {!loader && (
+                <>
+                <NavBar />
+                <SearchBar type={'personnage'} inputValue={inputValue} handleChange={handleChangeInputValue} />
+                <div className="characters-list">
+                    {getFilterCharacters().map((elem) => (
+                        <Card {...elem} />
+                    ))} 
+                </div>
+                </>
+            )}
             </div>
-        </div>
+        
+        </>
     )
 }
 
