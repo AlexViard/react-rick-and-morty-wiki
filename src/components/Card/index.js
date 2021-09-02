@@ -14,7 +14,6 @@ const Card = ({ name, status, species, type, gender, origin, location, image, ep
         const getNameFirstEpisode = async (episode) => {
             try {
                 const response = await api.get(episode);
-                console.log(response);
                 setFirstEpisode({
                     name: response.data.name,
                 });
